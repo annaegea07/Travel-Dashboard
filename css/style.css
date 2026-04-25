@@ -1,0 +1,287 @@
+:root {
+    --color-títol-header: white;
+    --color-títol-card: #ABD1C6;
+    --color-subtitol-card: #5A7F78;
+    --color-black: black;
+    --shadow-strong: rgba(0, 0, 0, 0.271);
+    --shadow-soft: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.15));
+    --shadow-select: 0 4px 12px rgba(173, 220, 210, 0.5);
+    --grad-blanc: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+    --grad-card: linear-gradient(to bottom, #c4e9ff, white);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/*Movile First*/
+body {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    margin: 0;
+}
+
+#header h1 {
+    color: var(--color-títol-header);
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.7);
+    font-size: 2.5rem;
+}
+
+#header {
+    height: 300px;
+    position: relative;
+    /* Necessari per posicionar el select dins del header */
+    padding: 20px;
+}
+
+#header #imagenCiudad {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+#imagenCiudad img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+    z-index: 1;
+}
+
+#imagenCiudad.degradat::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 70%;
+    background: var(--grad-blanc);
+    z-index: 2;
+    pointer-events: none;
+}
+
+#selecCiutat {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#selecCiutat select {
+    bottom: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border-color: var(--color-títol-card);
+    font-size: large;
+    padding: 10px;
+    box-shadow: var(--shadow-select);
+    border-radius: 10px;
+}
+
+#main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    min-height: auto;
+}
+
+/*Estructura cardResum*/
+.cardResum {
+    display: grid;
+    gap: 10px;
+    margin: 30px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "tituloCiudad tituloCiudad"
+        "convMoneda infoMeteorologic"
+        "MsgViatge MsgViatge";
+}
+
+
+.cardResum h1 {
+    font-weight: bold;
+    color: #54b0ea;
+}
+
+/* Informació meteorològica */
+#infoMeteorologic {
+    grid-area: infoMeteorologic;
+    background: var(--grad-card);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.271);
+    padding: 10px;
+    font-size: small;
+}
+
+#tempIcon {
+    font-size: 1.5rem;
+    line-height: 1;
+    filter: var(--shadow-soft);
+}
+
+#tempActual {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#tempText {
+    font-size: 10px;
+    margin: 0;
+    text-align: center;
+}
+
+.contingutMeteorologic {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 5px;
+    color: var(--color-black);
+}
+
+/* Titol Ciutat */
+#tituloCiudad {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    grid-area: tituloCiudad;
+}
+#tituloCiudad h3{
+    color: #8ccff0;
+}
+/* Missatge de viatge */
+#MsgViatge {
+    background: var(--grad-card);
+    grid-area: MsgViatge;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.271);
+}
+
+/*MONEDA*/
+#convMoneda {
+    border-radius: 10px;
+    grid-area: convMoneda;
+    background: var(--grad-card);
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.271);
+    font-size: 10px;
+}
+
+.container {
+    text-align: center;
+}
+
+.currency-container {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    padding: 10px;
+}
+
+.currency-container select {
+    padding: 5px;
+}
+
+#quantitatIntro,
+#quantitatIntroSegona {
+    text-align: end;
+    padding: 5px;
+    width: 50%;
+}
+
+/*DESCKTOP*/
+@media (min-width: 768px) {
+    #header {
+        height: 400px;
+        padding: 40px;
+    }
+
+    #header h1 {
+        margin: 20px;
+        font-size: 4rem;
+    }
+    #tituloCiudad {
+        margin: 17px;
+    }
+
+    #selecCiutat select {
+        font-size: 1.2rem;
+        padding: 12px 20px;
+        border-radius: 12px;
+    }
+
+    .cardResum {
+        max-width: 700px;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .cardResum h1 {
+        font-size: 2.7rem;
+    }
+    #tituloCiudad h3{
+        font-size: 1.5rem;
+    }
+
+    #infoMeteorologic {
+        padding: 25px;
+        font-size: 1rem;
+    }
+
+    #tempActual {
+        font-size: 2rem;
+    }
+
+    #tempText {
+        font-size: 1rem;
+    }
+
+    #tempIcon {
+        font-size: 2.5rem;
+    }
+
+    #MsgViatge {
+        padding: 25px;
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #convMoneda {
+        padding: 25px;
+        font-size: 12px;
+    }
+
+    .currency-container select {
+        padding: 10px;
+    }
+
+    .currency-container {
+        gap: 15px;
+    }
+
+    #quantitatIntro,
+    #quantitatIntroSegona {
+        width: 60%;
+        padding: 10px;
+        font-size: 15px;
+    }
+
+
+
+
+
+}

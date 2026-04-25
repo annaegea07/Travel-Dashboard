@@ -1,0 +1,94 @@
+
+.slider-container {
+    width: 100%;
+    padding: 20px 20px;     
+    box-sizing: border-box; 
+}
+
+.swiper-wrapper .slider-item {
+    list-style: none;
+}
+
+.swiper-wrapper .slider-item .slider-link {
+    width: 100%;
+    max-width: 320px;     
+    margin: 0 auto;       
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background: white;
+    padding: 16px;
+    border-radius: 12px;
+    text-decoration: none;
+    border: 2px solid transparent;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05);
+    transition: 0.2s ease;
+}
+
+/* Imatge*/
+.swiper-wrapper .slider-link .slider-img {
+    width: 75%;           
+    max-width: 200px;
+    margin: 0 auto;      
+    display: block;
+    border-radius: 10px;
+}
+
+/* Hover targeta */
+.swiper-wrapper .slider-item .slider-link:hover {
+    border-color: #5372F0;
+}
+
+/* Badge */
+.swiper-wrapper .slider-link .badge {
+    color: black;
+    background: #DDE4FF;
+    padding: 8px 12px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    width: fit-content;
+    border-radius: 50px;
+}
+
+/* Títol */
+.swiper-wrapper .slider-link .slider-title {
+    font-size: 1.05rem;
+    color: black;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* Botó — centrat i amb aire */
+.swiper-wrapper .slider-item .slider-button {
+    display: flex;
+    flex-direction: column;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    margin: 30px 0 5px;
+    color: #5372F0;
+    border: 2px solid #5372F0;
+    background: none;
+    cursor: pointer;
+    transform: rotate(-45deg);
+    transition: 0.4s ease;
+}
+
+.swiper-wrapper .slider-link:hover .slider-button {
+    color: #fff;
+    background: #5372F0;
+}
+
+/* DESKTOP */
+@media (min-width: 768px) {
+    .swiper-wrapper .slider-item .slider-link {
+        max-width: 300px;   
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .swiper-wrapper .slider-link .slider-img {
+        width: 100%;
+        max-width: 250px;
+    }
+}
