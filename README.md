@@ -50,10 +50,10 @@ L'activitat consistia a crear un Travel Dashboard amb HTML, CSS i JavaScript van
 
 ## Decisions tècniques
 
-- **APIs externes:** S'han utilitzat APIs per obtenir dades meteorològiques i de canvi de moneda en temps real mitjançant `fetch`.
-- **Mobile First:** El disseny s'ha estructurat primer per a mòbil i després s'ha adaptat per a pantalles més grans amb media queries.
-- **Modularitat del JS:** El codi JavaScript s'ha separat en dos fitxers (`main.js` i `slider.js`) per mantenir el codi organitzat i llegible.
-
+- **APIs externes:** S'han utilitzat APIs per obtenir dades meteorològiques i de canvi de moneda en temps real mitjançant `fetch`
+- **Mobile First:** El disseny s'ha estructurat primer per a mòbil i després s'ha adaptat per a pantalles més grans amb media queries
+- **Modularitat del JS:** El codi JavaScript s'ha separat en dos fitxers (`main.js` i `slider.js`) per mantenir el codi organitzat i evitar conflictes entre funcions que impedien el correcte funcionament de la pàgina
+  
 ## Decisions de disseny
 Com que el dashboard deixava força espai buit, vaig decidir afegir un **slider d'imatges** per donar més dinamisme visual a la pàgina. La majoria d'imatges fan referència directa als llocs que es mencionen als textos i, a més, cada títol inclou un enllaç directe al seu lloc oficial de turisme
 
